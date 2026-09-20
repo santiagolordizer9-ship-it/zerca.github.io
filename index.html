@@ -1,79 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta property="og:title" content="Zerca's SIMPLSYA Grill and Restaurant Website">
-<meta property="og:description" content="Use to showcase the services as s whole and portfolio">
-<meta property="og:url" content= "https://santiagolordizer9-ship-it/zerca.github.io/">
- <meta property="og:image" content="https://santiagolordizer9-ship-it/zerca.github.io/Restaurant1.png">
-<meta property="og:type" content="website">
-
+  <meta property="og:title" content="Zerca's SIMPLSYA Grill and Restaurant Website">
+  <meta property="og:description" content="Use to showcase the services as a whole and portfolio">
+  <meta property="og:url" content="https://santiagolordizer9-ship-it.github.io/zerca.github.io/">
+  <meta property="og:image" content="https://santiagolordizer9-ship-it.github.io/zerca.github.io/Restaurant1.png">
+  <meta property="og:type" content="website">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zerca's SIMPLSYA Grill & Restaurant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --gold: #d4a574;
+      --gold-soft: #f0e6d2;
+      --brown: #5a2e1f;
+      --dark: #1a1a1a;
+      --light: #fffaf3;
+      --text: #333;
+      --shadow: rgba(0,0,0,0.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      /*background-color: #f5f1e8;*/
       background-image: url('Back.png');
-      /*background-repeat: no-repeat;*/
-      color: #333;
+      color: var(--text);
     }
+
     header {
       background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #2d1810 100%);
       padding: 50px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
     }
-    
-    /* Animated background elements */
-    header::before {
+
+    header::before,
+    header::after {
       content: '';
       position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    header::before {
       top: -50%;
       right: -10%;
       width: 600px;
       height: 600px;
       background: radial-gradient(circle, rgba(212, 165, 116, 0.08) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-      animation: float 8s ease-in-out infinite;
     }
-    
+
     header::after {
-      content: '';
-      position: absolute;
       bottom: -30%;
       left: -5%;
       width: 500px;
       height: 500px;
       background: radial-gradient(circle, rgba(90, 46, 31, 0.12) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
       animation: float 10s ease-in-out infinite reverse;
     }
-    
+
     @keyframes float {
-      0%, 100% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(20px);
-      }
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(20px); }
     }
-    
+
     @keyframes glow {
       0%, 100% {
-        text-shadow: 0 0 20px rgba(212, 165, 116, 0.3), 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 20px rgba(212,165,116,0.30), 2px 2px 4px rgba(0,0,0,0.5);
       }
       50% {
-        text-shadow: 0 0 30px rgba(212, 165, 116, 0.5), 2px 2px 4px rgba(0, 0, 0, 0.5);
+        text-shadow: 0 0 30px rgba(212,165,116,0.50), 2px 2px 4px rgba(0,0,0,0.5);
       }
     }
-    
+
     .header-container {
       position: relative;
       z-index: 2;
@@ -82,27 +89,24 @@
       align-items: center;
       gap: 20px;
     }
-    
+
     header img {
       max-width: 200px;
       height: auto;
       display: block;
-      filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 30px rgba(212, 165, 116, 0.15));
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.4s ease;
+      filter: drop-shadow(0 8px 24px rgba(0,0,0,0.4)) drop-shadow(0 0 30px rgba(212,165,116,0.15));
+      transition: transform 0.4s ease, filter 0.4s ease;
       position: relative;
       z-index: 3;
     }
-    
+
     header img:hover {
       transform: scale(1.1) translateY(-8px);
-      filter: drop-shadow(0 12px 32px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 40px rgba(212, 165, 116, 0.25));
+      filter: drop-shadow(0 12px 32px rgba(0,0,0,0.5)) drop-shadow(0 0 40px rgba(212,165,116,0.25));
     }
-    
-    .header-text-wrapper {
-      position: relative;
-      z-index: 2;
-    }
-    
+
+    .header-text-wrapper { position: relative; z-index: 2; }
+
     header h1 {
       margin: 0;
       font-size: 2.8em;
@@ -116,10 +120,10 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
+
     header p {
       margin: 8px 0 0 0;
-      color: #d4a574;
+      color: var(--gold);
       font-size: 1em;
       font-weight: 500;
       letter-spacing: 3px;
@@ -127,42 +131,36 @@
       font-family: 'Inter', sans-serif;
       transition: color 0.3s ease;
     }
-    
-    header:hover p {
-      color: #f0e6d2;
-    }
-    
+
+    header:hover p { color: var(--gold-soft); }
+
     .header-accent {
       width: 80px;
       height: 3px;
-      background: linear-gradient(90deg, transparent, #d4a574, transparent);
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
       margin: 12px auto 0;
       border-radius: 2px;
       animation: expandWidth 2s ease-in-out infinite;
     }
-    
+
     @keyframes expandWidth {
-      0%, 100% {
-        width: 80px;
-      }
-      50% {
-        width: 120px;
-      }
+      0%, 100% { width: 80px; }
+      50% { width: 120px; }
     }
-    
+
     nav {
       background-color: rgba(26, 26, 26, 0.95);
       padding: 15px 20px;
       text-align: center;
-      border-top: 2px solid #d4a574;
+      border-top: 2px solid var(--gold);
       backdrop-filter: blur(10px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
       position: relative;
       z-index: 1;
     }
-    
+
     nav a {
-      color: #f0e6d2;
+      color: var(--gold-soft);
       margin: 0 20px;
       text-decoration: none;
       font-weight: 600;
@@ -171,7 +169,7 @@
       position: relative;
       padding-bottom: 4px;
     }
-    
+
     nav a::after {
       content: '';
       position: absolute;
@@ -179,45 +177,54 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: linear-gradient(90deg, #d4a574, #f0e6d2);
+      background: linear-gradient(90deg, var(--gold), var(--gold-soft));
       transition: width 0.3s ease;
     }
-    
-    nav a:hover {
-      color: #d4a574;
-    }
-    
-    nav a:hover::after {
-      width: 100%;
-    }
-    
+
+    nav a:hover { color: var(--gold); }
+    nav a:hover::after { width: 100%; }
+
     .hero {
       background: url('photo-1546484396-fb3fc6f95f98.jpeg') center/cover no-repeat;
       color: #fff;
       text-align: center;
       padding: 100px 20px;
     }
+
     .hero h1 {
       font-size: 3em;
       margin: 0;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.45);
     }
+
     .section {
       padding: 50px 20px;
       max-width: 1000px;
       margin: auto;
     }
-    #about {
+
+    #about, #services, #grazing, #mobile-bar, #Restaurant-Menu, #Paluto, #Bilao, #contact {
       background-color: #fff;
-      border-radius: 8px;
+      border-radius: 12px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
-    #about h2 {
-      color: #5a2e1f;
+
+    #about h2,
+    #services h2,
+    #grazing h2,
+    #mobile-bar h2,
+    #Restaurant-Menu h2,
+    #Paluto h2,
+    #Bilao h2,
+    #contact h2 {
+      color: var(--brown);
       font-size: 2.2em;
-      margin-bottom: 30px;
-      border-bottom: 3px solid #d4a574;
+      margin-bottom: 20px;
+      border-bottom: 3px solid var(--gold);
       padding-bottom: 15px;
+      text-align: center;
     }
+
     .about-intro {
       font-size: 1.15em;
       line-height: 1.8;
@@ -226,408 +233,133 @@
       font-weight: 500;
       background-color: #fef8f0;
       padding: 20px;
-      border-left: 5px solid #d4a574;
+      border-left: 5px solid var(--gold);
       border-radius: 4px;
     }
-    .about-overview {
-      margin: 30px 0;
-    }
+
+    .about-overview { margin: 30px 0; }
+
     .about-overview h3 {
-      color: #5a2e1f;
+      color: var(--brown);
       font-size: 1.4em;
       margin-bottom: 15px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .about-overview p {
       line-height: 1.8;
       color: #555;
       margin: 10px 0;
     }
+
     .about-details {
       background-color: #fef8f0;
       padding: 20px;
       border-radius: 8px;
       margin: 15px 0;
     }
-    .about-details strong {
-      color: #5a2e1f;
-    }
+
+    .about-details strong { color: var(--brown); }
+
     .mission-vision-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 30px;
       margin-top: 40px;
     }
+
     .mission-box, .vision-box {
       background-color: #fef8f0;
       padding: 25px;
       border-radius: 8px;
-      border-top: 5px solid #d4a574;
+      border-top: 5px solid var(--gold);
     }
+
     .mission-box h3, .vision-box h3 {
-      color: #5a2e1f;
+      color: var(--brown);
       font-size: 1.5em;
       margin-top: 0;
       display: flex;
       align-items: center;
       gap: 10px;
     }
+
     .mission-box ul, .vision-box ul {
       list-style-position: inside;
       line-height: 2;
       color: #555;
     }
-    .mission-box li, .vision-box li {
-      margin: 10px 0;
-    }
+
+    .mission-box li, .vision-box li { margin: 10px 0; }
+
     .services {
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
+      gap: 18px;
+      padding: 0 10px 20px;
     }
-    .service-card0 {
-      background: #fff;
+
+    .service-card1, .service-card2, .service-card3, .service-card4, .service-card5 {
+      position: relative;
+      color: #fff;
       border: 2px solid #ddd;
-      border-radius: 8px;
+      border-radius: 12px;
       width: 250px;
       margin: 15px;
       padding: 20px;
       text-align: center;
       box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+      overflow: hidden;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .service-card1 {
-    position: relative;
-    color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* keeps overlay inside */
-}
 
-/* Background image layer */
-.service-card1::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('Grazing Table Logo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* image transparency */
-    z-index: 0;
-}
+    .service-card1::before,
+    .service-card2::before,
+    .service-card3::before,
+    .service-card4::before,
+    .service-card5::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.45;
+      z-index: 0;
+    }
 
-/* Dark overlay layer */
-.service-card1::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3); /* subtle dark overlay */
-    z-index: 1;
-}
+    .service-card1::after,
+    .service-card2::after,
+    .service-card3::after,
+    .service-card4::after,
+    .service-card5::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.30);
+      z-index: 1;
+    }
 
-/* Text stays above everything */
-.service-card1 * {
-    position: relative;
-    z-index: 2;
-}
-      .service-card2 {
-    position: relative;
-    color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* keeps overlay inside */
-}
+    .service-card1 *, .service-card2 *, .service-card3 *, .service-card4 *, .service-card5 * {
+      position: relative;
+      z-index: 2;
+    }
 
-/* Background image layer */
-.service-card2::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('Mobile Bar Logo.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* image transparency */
-    z-index: 0;
-}
+    .service-card1::before { background-image: url('Grazing Table Logo.png'); }
+    .service-card2::before { background-image: url('Mobile Bar Logo.png'); }
+    .service-card3::before { background-image: url('Restaurant.png'); }
+    .service-card4::before { background-image: url('Paluto.png'); }
+    .service-card5::before { background-image: url('Bilao.png'); }
 
-/* Dark overlay layer */
-.service-card2::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3); /* subtle dark overlay */
-    z-index: 1;
-}
-
-/* Text stays above everything */
-.service-card2 * {
-    position: relative;
-    z-index: 2;
-}
-    
-.service-card3 {
-    position: relative;
-    color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* keeps overlay inside */
-}
-
-/* Background image layer */
-.service-card3::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('Restaurant.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* image transparency */
-    z-index: 0;
-}
-
-/* Dark overlay layer */
-.service-card3::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3); /* subtle dark overlay */
-    z-index: 1;
-}
-
-/* Text stays above everything */
-.service-card3 * {
-    position: relative;
-    z-index: 2;
-}
-    .service-card4 {
-    position: relative;
-    color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* keeps overlay inside */
-}
-
-/* Background image layer */
-.service-card4::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('Paluto.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* image transparency */
-    z-index: 0;
-}
-
-/* Dark overlay layer */
-.service-card4::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3); /* subtle dark overlay */
-    z-index: 1;
-}
-
-/* Text stays above everything */
-.service-card4 * {
-    position: relative;
-    z-index: 2;
-}
-.service-card5 {
-    position: relative;
-    color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    width: 250px;
-    margin: 15px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    overflow: hidden; /* keeps overlay inside */
-}
-
-/* Background image layer */
-.service-card5::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('Bilao.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 0.5; /* image transparency */
-    z-index: 0;
-}
-
-/* Dark overlay layer */
-.service-card5::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.3); /* subtle dark overlay */
-    z-index: 1;
-}
-
-/* Text stays above everything */
-.service-card5 * {
-    position: relative;
-    z-index: 2;
-}
-
-    /* Services Section */
-    #services {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #services h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #services > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-    /* Restaurant Menu Gallery Section */
-    #Restaurant-Menu {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #Restaurant-Menu h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #Restaurant-Menu > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-    /* Grazing Gallery Section */
-    #grazing {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #grazing h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #grazing > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-    /* Mobile Bar Gallery Section */
-    #mobile-bar {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #mobile-bar h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #mobile-bar > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-    /* Paluto Section */
-    #Paluto {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #Paluto h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #Paluto > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
-   /* Bilao Section */
-    #Bilao {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    #Bilao h2 {
-      color: #5a2e1f;
-      font-size: 2.2em;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #d4a574;
-      padding-bottom: 15px;
-      text-align: center;
-    }
-    #Bilao > p {
-      text-align: center;
-      color: #666;
-      font-size: 0.95em;
-      margin-bottom: 40px;
-      font-style: italic;
-    }
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 30px;
       margin-top: 30px;
       max-width: 1200px;
@@ -635,6 +367,7 @@
       margin-right: auto;
       justify-items: center;
     }
+
     .gallery-item {
       position: relative;
       border-radius: 12px;
@@ -646,19 +379,21 @@
       cursor: pointer;
       transition: box-shadow 0.3s ease, transform 0.3s ease;
     }
+
     .gallery-item:hover {
       box-shadow: 0 12px 35px rgba(0,0,0,0.25);
       transform: translateY(-8px);
     }
+
     .gallery-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
+
+    .gallery-item:hover img { transform: scale(1.08); }
+
     .gallery-description {
       position: absolute;
       bottom: 0;
@@ -671,46 +406,43 @@
       transform: translateY(100px);
       transition: transform 0.3s ease;
     }
-    .gallery-item:hover .gallery-description {
-      transform: translateY(0);
-    }
+
+    .gallery-item:hover .gallery-description { transform: translateY(0); }
+
     .gallery-description h3 {
       margin: 0 0 10px 0;
       font-size: 1.4em;
-      color: #d4a574;
+      color: var(--gold);
       font-weight: 700;
     }
+
     .gallery-description p {
       margin: 0;
       font-size: 0.9em;
       line-height: 1.6;
       color: #f0f0f0;
     }
-    /* Modal Styles */
+
     .modal {
       display: none;
       position: fixed;
       z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.8);
+      inset: 0;
+      background-color: rgba(0,0,0,0.8);
       animation: fadeIn 0.3s ease;
     }
+
     .modal.active {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
     @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
+
     .modal-content {
       position: relative;
       background-color: #fff;
@@ -726,6 +458,7 @@
       align-items: center;
       text-align: center;
     }
+
     @keyframes slideIn {
       from {
         transform: translateY(-50px);
@@ -736,6 +469,7 @@
         opacity: 1;
       }
     }
+
     .modal-image {
       width: 100%;
       max-width: 800px;
@@ -744,13 +478,15 @@
       margin-bottom: 20px;
       display: block;
     }
+
     .modal-title {
       font-size: 1.8em;
-      color: #5a2e1f;
+      color: var(--brown);
       margin: 0 0 15px 0;
       font-weight: 700;
       width: 100%;
     }
+
     .modal-description {
       font-size: 1.1em;
       line-height: 1.8;
@@ -760,201 +496,156 @@
       width: 100%;
       white-space: pre-wrap;
     }
+
     .close-btn {
       position: absolute;
       top: 15px;
       right: 25px;
       font-size: 2em;
       font-weight: bold;
-      color: #5a2e1f;
+      color: var(--brown);
       cursor: pointer;
       background: none;
       border: none;
       transition: color 0.3s ease;
     }
-    .close-btn:hover {
-      color: #d4a574;
-    }
-    /* Contact Section Styles */
+
+    .close-btn:hover { color: var(--gold); }
+
     #contact {
       text-align: center;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 50px 20px;
+      max-width: 1000px;
+      margin: 50px auto;
+      background: linear-gradient(135deg, #fffefb 0%, #fff 100%);
+      border: 1px solid rgba(212,165,116,0.2);
+      position: relative;
+      overflow: hidden;
     }
-    #contact h2 {
-      color: #5a2e1f;
-      margin-bottom: 30px;
-      font-size: 2em;
+
+    #contact::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(212,165,116,0.12), transparent 33%);
+      pointer-events: none;
     }
-    #contact p {
-      font-size: 1.1em;
+
+    .contact-layout {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.05fr 1.2fr;
+      gap: 28px;
+      align-items: center;
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .contact-graphic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px;
+    }
+
+    .contact-graphic img {
+      width: min(100%, 340px);
+      height: auto;
+      display: block;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(90,46,31,0.18);
+      animation: pulseGlow 3s ease-in-out infinite;
+      border: 3px solid rgba(212,165,116,0.45);
+      background: #fff;
+    }
+
+    @keyframes pulseGlow {
+      0%, 100% { transform: translateY(0) scale(1); box-shadow: 0 12px 30px rgba(90,46,31,0.18); }
+      50% { transform: translateY(-8px) scale(1.02); box-shadow: 0 20px 40px rgba(212,165,116,0.28); }
+    }
+
+    .contact-details {
+      background: linear-gradient(135deg, rgba(90,46,31,0.02), rgba(212,165,116,0.05));
+      border: 1px solid rgba(212,165,116,0.2);
+      border-radius: 18px;
+      padding: 28px 24px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.04);
+    }
+
+    .contact-details p {
+      font-size: 1.08em;
       margin: 15px 0;
       line-height: 1.8;
+      color: #444;
     }
+
+    .contact-details strong {
+      display: inline-block;
+      min-width: 100px;
+      color: var(--brown);
+      font-weight: 700;
+    }
+
     #contact a {
-      color: #d4a574;
+      color: var(--gold);
       text-decoration: none;
       font-weight: 600;
       transition: color 0.3s ease;
     }
+
     #contact a:hover {
-      color: #5a2e1f;
+      color: var(--brown);
       text-decoration: underline;
     }
+
     footer {
-      background-color: #5a2e1f;
+      background-color: var(--brown);
       color: #fff;
       text-align: center;
       padding: 20px;
     }
 
-    /* Mobile Responsive Styles */
     @media (max-width: 768px) {
-      header {
-        padding: 40px 20px;
-      }
-      
-      header h1 {
-        font-size: 2.2em;
-        letter-spacing: 1px;
-      }
-      
-      header img {
-        max-width: 150px;
-      }
-      
-      header p {
-        font-size: 0.85em;
-      }
-      
-      .hero h1 {
-        font-size: 2em;
-      }
-      .modal-content {
-        padding: 20px;
-        max-width: 95%;
-      }
-      .modal-image {
-        max-width: 100%;
-      }
-      .modal-title {
-        font-size: 1.4em;
-      }
-      .modal-description {
-        font-size: 0.95em;
-        text-align: justify;
-      }
-      nav a {
-        margin: 0 10px;
-        font-size: 0.85em;
-      }
-      #contact h2 {
-        font-size: 1.5em;
-      }
-      #contact p {
-        font-size: 1em;
-      }
-      .mission-vision-container {
-        grid-template-columns: 1fr;
-      }
-      #about h2 {
-        font-size: 1.8em;
-      }
-      #grazing h2 {
-        font-size: 1.8em;
-      }
-      #mobile-bar h2 {
-        font-size: 1.8em;
-      }
-      .gallery {
-        gap: 20px;
-      }
-      .gallery-item {
-        max-width: 100%;
-      }
+      header { padding: 40px 20px; }
+      header h1 { font-size: 2.2em; letter-spacing: 1px; }
+      header img { max-width: 150px; }
+      header p { font-size: 0.85em; }
+      .hero h1 { font-size: 2em; }
+      .modal-content { padding: 20px; max-width: 95%; }
+      .modal-image { max-width: 100%; }
+      .modal-title { font-size: 1.4em; }
+      .modal-description { font-size: 0.95em; text-align: justify; }
+      nav a { margin: 0 10px; font-size: 0.85em; }
+      #contact h2 { font-size: 1.6em; }
+      .contact-layout { grid-template-columns: 1fr; }
+      .mission-vision-container { grid-template-columns: 1fr; }
+      #about h2 { font-size: 1.8em; }
+      #grazing h2, #mobile-bar h2 { font-size: 1.8em; }
+      .gallery { gap: 20px; }
+      .gallery-item { max-width: 100%; }
     }
 
     @media (max-width: 480px) {
-      header {
-        padding: 30px 15px;
-      }
-      
-      header h1 {
-        font-size: 1.8em;
-        letter-spacing: 1px;
-      }
-      
-      header img {
-        max-width: 120px;
-      }
-      
-      header p {
-        font-size: 0.75em;
-        letter-spacing: 2px;
-      }
-      
-      .modal-content {
-        padding: 15px;
-        max-width: 100%;
-        margin: 10px;
-      }
-      .modal-image {
-        max-width: 100%;
-      }
-      .modal-title {
-        font-size: 1.2em;
-      }
-      .modal-description {
-        font-size: 0.9em;
-        text-align: justify;
-      }
-      .close-btn {
-        right: 10px;
-        font-size: 1.5em;
-      }
-      nav a {
-        margin: 0 8px;
-        font-size: 0.75em;
-      }
-      .service-card {
-        width: 100%;
-        margin: 10px 0;
-      }
-      #contact h2 {
-        font-size: 1.3em;
-      }
-      #contact p {
-        font-size: 0.95em;
-      }
-      .mission-vision-container {
-        grid-template-columns: 1fr;
-      }
-      .about-intro {
-        font-size: 1em;
-      }
-      .mission-box h3, .vision-box h3 {
-        font-size: 1.2em;
-      }
-      #grazing h2 {
-        font-size: 1.5em;
-      }
-      #mobile-bar h2 {
-        font-size: 1.5em;
-      }
-      .gallery {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-      .gallery-item {
-        height: 300px;
-      }
-      .gallery-description h3 {
-        font-size: 1.2em;
-      }
-      .gallery-description p {
-        font-size: 0.85em;
-      }
+      header { padding: 30px 15px; }
+      header h1 { font-size: 1.8em; letter-spacing: 1px; }
+      header img { max-width: 120px; }
+      header p { font-size: 0.75em; letter-spacing: 2px; }
+      .modal-content { padding: 15px; max-width: 100%; margin: 10px; }
+      .modal-image { max-width: 100%; }
+      .modal-title { font-size: 1.2em; }
+      .modal-description { font-size: 0.9em; text-align: justify; }
+      .close-btn { right: 10px; font-size: 1.5em; }
+      nav a { margin: 0 8px; font-size: 0.75em; }
+      #contact h2 { font-size: 1.3em; }
+      .contact-details p { font-size: 0.96em; }
+      .mission-vision-container { grid-template-columns: 1fr; }
+      .about-intro { font-size: 1em; }
+      .mission-box h3, .vision-box h3 { font-size: 1.2em; }
+      .gallery { grid-template-columns: 1fr; gap: 15px; }
+      .gallery-item { height: 300px; }
+      .gallery-description h3 { font-size: 1.2em; }
+      .gallery-description p { font-size: 0.85em; }
     }
   </style>
 </head>
@@ -976,9 +667,9 @@
     <a href="#services">Service Catalog</a>
     <a href="#grazing">Grazing Table Rate</a>
     <a href="#mobile-bar">Mobile Bar Rate</a>
-    <a href="#Restaurant-Menu">Restaurant Menu </a>
-   <a href="#Paluto">Paluto, Food Tray and Bento Meals Rate </a>
-   <a href="#Bilao">Bilao Packages Rate</a>
+    <a href="#Restaurant-Menu">Restaurant Menu</a>
+    <a href="#Paluto">Paluto, Food Tray and Bento Meals Rate</a>
+    <a href="#Bilao">Bilao Packages Rate</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -989,29 +680,27 @@
 
   <section id="about" class="section">
     <h2>About Us</h2>
-    
+
     <div class="about-intro">
       Zerca’s SIMPLSYA Grill & Restaurant is a rustic, welcoming dining space in Laguna that embodies the Filipino value of simplicity—serving straightforward, delicious food and drinks designed for family and friends to enjoy together. Below is a polished overview, mission, and vision statement crafted for website use.
     </div>
 
     <div class="about-overview">
       <h3>🌟 Our Story</h3>
-      <p>Zerca’s SIMPLSYA Grill & Restaurant is built on the philosophy of simplicity with elegance. The name SIMPLSYA reflects our vision: creating a dining experience that is easy, relaxed, and memorable. We specialize in grilled dishes, grazing tables, and mobile bar services, offering guests not just food, but a warm and inviting atmosphere where connections thrive.
+      <p>Zerca’s SIMPLSYA Grill & Restaurant is built on the philosophy of simplicity with elegance. The name SIMPLSYA reflects our vision: creating a dining experience that is easy, relaxed, and memorable.</p>
       <div class="about-details">
-        <p><strong>📍 Location:</strong> Cabuyao, Laguna, Philippines</p>
-        <p><strong>🍽️ Services:</strong> Grazing Table, Mobile Bar, Restaurant Dining</p>
-        <p><strong>🏠 Ambiance:</strong> Rustic, cozy, and family-friendly</p>
-        <p><strong>⭐ Specialty:</strong> Simple yet flavorful Filipino-inspired dishes, complemented by refreshing beverages</p>
+        <p><strong>Location:</strong> Cabuyao, Laguna, Philippines</p>
+        <p><strong>Services:</strong> Grazing Table, Mobile Bar, Restaurant Dining</p>
+        <p><strong>Ambiance:</strong> Rustic, cozy, and family-friendly</p>
+        <p><strong>Specialty:</strong> Simple yet flavorful Filipino-inspired dishes, complemented by refreshing beverages</p>
       </div>
-      
-      <p style="font-style: italic; color: #666;">Our restaurant is more than a place to eat—it's a space where people gather, celebrate, and enjoy life's simple pleasures.</p>
+      <p>Our restaurant is more than a place to eat—it’s a space where people gather, celebrate, and enjoy life’s simple pleasures.</p>
     </div>
 
     <div class="mission-vision-container">
       <div class="mission-box">
         <h3>🎯 Our Mission</h3>
-        <p style="margin-bottom: 20px;">To provide a straightforward and welcoming dining experience where simplicity meets flavor. We are committed to:</p>
-        <ul style="padding-left: 20px;">
+        <ul>
           <li>Serving delicious, freshly prepared food that highlights Filipino culinary traditions</li>
           <li>Creating a relaxed environment where families and friends can connect</li>
           <li>Offering professional catering services (grazing tables and mobile bars) that bring our rustic charm to any event</li>
@@ -1020,9 +709,8 @@
       </div>
 
       <div class="vision-box">
-        <h3>🌈 Our Vision</h3>
-        <p style="margin-bottom: 20px;">To be the go-to destination in Cavite for rustic dining and event services, recognized for simplicity, warmth, and authentic flavors. We envision:</p>
-        <ul style="padding-left: 20px;">
+        <h3>✨ Our Vision</h3>
+        <ul>
           <li>A restaurant that celebrates Filipino hospitality through food and service</li>
           <li>Expanding our reach by offering mobile bar and grazing table services to more communities</li>
           <li>Becoming a trusted brand in the local dining scene, known for balancing elegance with simplicity</li>
@@ -1033,27 +721,27 @@
   </section>
 
   <section id="services" class="section">
-    <h2 style="color:White,style="text-align:center";">Our Service Catalog</h2>
+    <h2>Our Service Catalog</h2>
     <div class="services">
       <div class="service-card1">
-        <h3>🥗 Grazing Table</h3>
+        <h3>Grazing Table</h3>
         <p>Elegant spreads for events and celebrations.</p>
       </div>
       <div class="service-card2">
-        <h3>🍸 Mobile Bar</h3>
+        <h3>Mobile Bar</h3>
         <p>Refreshing cocktails and beverages on the go.</p>
       </div>
       <div class="service-card3">
-        <h3>🍴 Restaurant</h3>
+        <h3>Restaurant</h3>
         <p>Rustic dining with signature grilled dishes.</p>
       </div>
       <div class="service-card4">
-        <h3>🍴 Paluto | Food Tray | Bento Meals</h3>
-        <p> Filipino favorites made fresh — from shareable trays to bento meals for any occasion.</p>
+        <h3>Paluto & Food Tray & Bento Meals</h3>
+        <p>Filipino favorites made fresh from shareable trays to bento meals for any occasion.</p>
       </div>
-       <div class="service-card5">
-        <h3>🍴 Bilao Package</h3>
-        <p> “A festive Filipino feast of smoky grills, fresh seafood, and classic noodles — perfect for sharing.</p>
+      <div class="service-card5">
+        <h3>Bilao Package</h3>
+        <p>A festive Filipino feast of smoky grills, fresh seafood, and classic noodles—perfect for sharing.</p>
       </div>
     </div>
   </section>
@@ -1062,39 +750,39 @@
     <h2>Grazing Table Packages</h2>
     <p>Click any image to view full details</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('Combination.jpg', 'Combination Platter', 'A Generous Feast for Every Celebration\n\nIndulge in a thoughtfully curated spread designed to delight large gatherings. This feast brings together the comforting flavors of savory street‑style favorites, the elegance of premium grazing selections, the heartiness of mini sliders, the sweetness of traditional kakanin, and the refreshment of carefully chosen beverages. Every bite offers a balance of taste and texture—crispy, creamy, savory, and sweet—ensuring that guests experience variety without compromise. From nostalgic Filipino classics to modern grazing indulgences, this combination is crafted to satisfy diverse palates and elevate any occasion. Whether it’s a milestone celebration, corporate event, or family gathering, this feast embodies abundance, harmony, and festive spirit—making it the perfect choice for those who want both tradition and innovation on the table.')">
+      <div class="gallery-item" onclick="openModal('Combination.jpg', 'Combination Platter', 'A generous feast for every celebration...')">
         <img src="Combination.jpg" alt="Combination platter">
         <div class="gallery-description">
           <h3>Combination Platter</h3>
-          <p>A delightful mix of our signature grilled meats, fresh vegetables, and artisan cheeses—perfect for sharing and sampling diverse flavors.</p>
+          <p>A delightful mix of our signature grilled meats, fresh vegetables, and artisan cheeses.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Filipino Kakanin.jpg', 'Filipino Kakanin', 'Celebrate tradition with a vibrant spread of Filipino rice delicacies, beautifully arranged to delight guests of all ages. Featuring an assortment of favorites such as maja blanca, sapin‑sapin, kalamay, ube, puto biñan, assorted puto, kutsinta, and suman, this table brings together the comforting sweetness and rich textures of classic kakanin. Perfectly paired with Kapeng Barako or refreshing juices, the Kakanin Table adds warmth, nostalgia, and festive charm to any occasion. Whether for birthdays, weddings, or corporate gatherings, it offers a taste of heritage and a touch of indulgence in every bite.')">
-        <img src="Filipino Kakanin.jpg" alt="Filipino kakanin desserts">
+      <div class="gallery-item" onclick="openModal('Filipino Kakanin.jpg', 'Filipino Kakanin', 'Celebrate tradition with a vibrant spread of Filipino rice delicacies...')">
+        <img src="Filipino Kakanin.jpg" alt="Filipino kakanin">
         <div class="gallery-description">
           <h3>Filipino Kakanin</h3>
-          <p>Authentic Filipino sweet treats and traditional pastries that bring warmth and nostalgia to your celebration. Perfect complement to any grazing spread.</p>
+          <p>Authentic Filipino sweet treats and traditional pastries that bring warmth and nostalgia.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Grazing.jpg', 'Elegant Grazing Table', 'An elegant centerpiece designed for sharing and entertaining, the Grazing Table showcases a rich selection of premium bites beautifully arranged for guests to enjoy. Featuring assorted cheeses, cold cuts, and cured meats, paired with artisan breads, spreads, and seasonal fruits, it offers a perfect balance of savory and sweet. Complemented by crunchy pretzels, assorted crackers, nuts, and indulgent desserts like brownies and macarons, this spread invites guests to mix, match, and savor every flavor. Ideal for weddings, corporate events, birthdays, or intimate gatherings, the Grazing Table brings sophistication, abundance, and variety—making every occasion feel festive and memorable.')">
-        <img src="Grazing.jpg" alt="Elegant grazing table">
+      <div class="gallery-item" onclick="openModal('Grazing.jpg', 'Elegant Grazing Table', 'An elegant centerpiece designed for sharing and entertaining...')">
+        <img src="Grazing.jpg" alt="Grazing table">
         <div class="gallery-description">
           <h3>Elegant Grazing Table</h3>
-          <p>Our signature grazing experience featuring an impressive selection of cured meats, fresh fruits, artisan breads, and gourmet spreads—ideal for upscale events.</p>
+          <p>Our signature grazing experience featuring premium bites, artisan breads, and seasonal fruits.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Slider.jpg', 'Gourmet Sliders', 'A fun and satisfying assortment of bite‑sized favorites, perfect for sharing at any gathering. The Sliders Table features a mix of mini burgers, hotdog sandwiches, ham & cheese sliders, and chicken sandwiches, paired with nachos topped with cheese dip and salsa, plus seasonal fresh fruits for a refreshing balance. To complete the spread, guests can enjoy their choice of juice or freshly brewed Kapeng Barako, making this table both hearty and inviting. Ideal for birthdays, casual parties, or corporate events, the Sliders Table offers variety, comfort, and flavor in every bite—bringing together familiar classics in a festive, shareable style. ')">
+      <div class="gallery-item" onclick="openModal('Slider.jpg', 'Gourmet Sliders', 'A fun and satisfying assortment of bite-sized favorites...')">
         <img src="Slider.jpg" alt="Gourmet sliders">
         <div class="gallery-description">
           <h3>Gourmet Sliders</h3>
-          <p>Bite-sized perfection! Our mini sliders showcase tender, grilled meats with fresh toppings—a crowd-pleasing favorite for any gathering.</p>
+          <p>Mini burgers, hotdogs, savory sliders, and crunchy sides crafted for easy sharing.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('Tusok-Tusok.jpg', 'Tusok-Tusok Skewers', 'Bring the lively spirit of the streets to your celebration with a vibrant Tusok‑Tusok spread. Featuring crowd‑pleasing favorites like fish balls, squid balls, kikiam, and tokneneng, paired with crispy French fries and refreshing juice, this table captures the fun and flavor of classic Filipino street food. Served with our signature Manong’s Sauce and Suka, every bite is a nostalgic treat that guests can enjoy together. Perfect for birthdays, casual parties, or themed events, the Tusok‑Tusok Table adds a playful, festive touch to any occasion—combining comfort, variety, and the unmistakable joy of street‑style dining.')">
+      <div class="gallery-item" onclick="openModal('Tusok-Tusok.jpg', 'Tusok-Tusok SKEWERS', 'Bring the lively spirit of the streets to your celebration with a vibrant tusok-tusok spread.')">
         <img src="Tusok-Tusok.jpg" alt="Tusok-tusok skewers">
         <div class="gallery-description">
           <h3>Tusok-Tusok Skewers</h3>
-          <p>Traditional Filipino street food on a stick! Tender grilled meats and vegetables perfectly seasoned and presented for easy, delicious snacking.</p>
+          <p>Traditional Filipino street food with a festive twist, served on skewers for easy snacking.</p>
         </div>
       </div>
     </div>
@@ -1104,170 +792,151 @@
     <h2>Mobile Bar Rate</h2>
     <p>Click any image to view full details</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('IMG1.jpg', 'Mobile Bar Experience', 'A dynamic and stylish mobile bar setup featuring premium spirits, fresh mixers, and skilled bartenders ready to craft exceptional cocktails for your celebration.\n\nPerfect for adding sophistication and energy to weddings, corporate events, and private parties.')">
+      <div class="gallery-item" onclick="openModal('IMG1.jpg', 'Mobile Bar Experience', 'A dynamic and stylish mobile bar setup featuring premium spirits, fresh mixers, and skilled bartenders ready to craft exceptional cocktails.')">
         <img src="IMG1.jpg" alt="Mobile bar setup">
         <div class="gallery-description">
           <h3>Mobile Bar Experience</h3>
-          <p>Dynamic and stylish bar setups featuring premium spirits, fresh mixers, and skilled bartenders ready to craft exceptional cocktails.</p>
+          <p>Premium cocktails and chilled beverages served in style for every celebration.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('IMG2.jpg', 'Classic Cocktail Service', 'Experience our signature cocktail service with expertly crafted classic and contemporary drinks. Our mobile bar brings the energy and expertise of a full bar setup wherever your event takes place.\n\nEnjoy customizable drink menus tailored to your event\'s mood and theme.')">
-        <img src="IMG2.jpg" alt="Cocktail service">
+      <div class="gallery-item" onclick="openModal('IMG2.jpg', 'Classic Cocktail Service', 'Experience our signature cocktail service with expertly crafted classic and contemporary drinks.')">
+        <img src="IMG2.jpg" alt="Classic cocktail service">
         <div class="gallery-description">
           <h3>Classic Cocktail Service</h3>
-          <p>Expertly crafted classic and contemporary drinks with customizable menus tailored to your event's mood and theme.</p>
+          <p>Expertly crafted cocktails tailored to suit your event’s mood and theme.</p>
         </div>
       </div>
-      <div class="gallery-item" onclick="openModal('IMG3.jpg', 'Mobile Iconic Bar', 'Elevate your event with a fully equipped Mobile Bar, designed to bring energy, style, and unforgettable flavors to any celebration. Featuring a wide selection of classic cocktails, signature mixes, and refreshing mocktails, our bar is manned by skilled bartenders who craft each drink with flair and precision.\n\nGuests can enjoy a dynamic experience with customizable drink menus, premium spirits, and fresh mixers, ensuring every glass suits the mood of the occasion. Whether it\'s a wedding, corporate gathering, birthday, or private party, the Mobile Bar adds sophistication, fun, and a lively atmosphere that keeps the celebration flowing.\n\nPerfect for large or intimate events, this service combines convenience and creativity—delivering not just drinks, but a memorable bar experience wherever you need it.')">
+      <div class="gallery-item" onclick="openModal('IMG3.jpg', 'Mobile Iconic Bar', 'Elevate your event with our fully equipped mobile bar, designed to bring energy, style, and unforgettable flavors to any celebration.')">
         <img src="IMG3.jpg" alt="Mobile iconic bar">
         <div class="gallery-description">
           <h3>Mobile Iconic Bar</h3>
-          <p>A fully equipped bar experience with skilled bartenders, premium spirits, and customizable cocktails—bringing sophisticated entertainment to any celebration.</p>
+          <p>Stylish, fully equipped, and ready to deliver unforgettable moments.</p>
         </div>
       </div>
     </div>
   </section>
-  
-<section id="Restaurant-Menu" class="section">
+
+  <section id="Restaurant-Menu" class="section">
     <h2>Restaurant Menu Gallery</h2>
     <p>Click any image to view full details</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('Slide1.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide1.JPG" alt="Restaurant Menu">
+      <div class="gallery-item" onclick="openModal('Slide1.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide1.JPG" alt="Restaurant menu photo 1">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
       </div>
-       <div class="gallery-item" onclick="openModal('Slide2.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide2.JPG" alt="Restaurant Menu">
+      <div class="gallery-item" onclick="openModal('Slide2.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide2.JPG" alt="Restaurant menu photo 2">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
       </div>
-       <div class="gallery-item" onclick="openModal('Slide3.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide3.JPG" alt="Restaurant Menu">
+      <div class="gallery-item" onclick="openModal('Slide3.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide3.JPG" alt="Restaurant menu photo 3">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
       </div>
-        <div class="gallery-item" onclick="openModal('Slide4.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide4.JPG" alt="Restaurant Menu">
+      <div class="gallery-item" onclick="openModal('Slide4.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide4.JPG" alt="Restaurant menu photo 4">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
-        </div>
-         <div class="gallery-item" onclick="openModal('Slide5.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide5.JPG" alt="Restaurant Menu">
+      </div>
+      <div class="gallery-item" onclick="openModal('Slide5.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide5.JPG" alt="Restaurant menu photo 5">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
-        </div>
-         <div class="gallery-item" onclick="openModal('Slide6.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide6.JPG" alt="Restaurant Menu">
+      </div>
+      <div class="gallery-item" onclick="openModal('Slide6.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide6.JPG" alt="Restaurant menu photo 6">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
-        </div>
-         <div class="gallery-item" onclick="openModal('Slide8.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide8.JPG" alt="Restaurant Menu">
+      </div>
+      <div class="gallery-item" onclick="openModal('Slide8.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces.')">
+        <img src="Slide8.JPG" alt="Restaurant menu photo 8">
         <div class="gallery-description">
           <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
-        </div>
-        </div>
-         <div class="gallery-item" onclick="openModal('Slide9.JPG', 'Restaurant Menu', 'A rustic dining experience featuring grilled specialties, hearty Filipino favorites, and signature sauces crafted with simple, flavorful tradition.')">
-        <img src="Slide9.JPG" alt="Restaurant Menu">
-        <div class="gallery-description">
-          <h3>Restaurant Menu</h3>
-          <p>Simple food, simple place — a truly wonderful dining experience.</p>
-        </div>
+          <p>Simple food, simple place—crafted for a truly wonderful dining experience.</p>
         </div>
       </div>
     </div>
   </section>
- <section id="Paluto" class="section">
-    <h2>Paluto | Food Tray | Bento Meals Rate</h2>
-    <p>Click any image to view full details</p>
+
+  <section id="Paluto" class="section">
+    <h2>Paluto, Food Tray and Bento Meals Rate</h2>
+    <p>Fresh, ready-to-serve meal options crafted for everyday convenience and large gatherings.</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('Seafood Beef.png', 'Paluto | Food Tray', 'Freshly cooked Filipino favorites — from customized Paluto dishes to hearty food trays, perfect for sharing and celebrations.')">
-        <img src="Seafood Beef.png" alt="Paluto | Food Tray">
+      <div class="gallery-item" onclick="openModal('Food Tray.jpg', 'Food Tray', 'Fresh, shareable portions for quick and convenient serving.')">
+        <img src="Food Tray.jpg" alt="Food tray">
         <div class="gallery-description">
-          <h3>Paluto & Food Tray</h3>
-          <p>Cooked fresh, served big — Filipino feasts your way.</p>
+          <h3>Food Tray</h3>
+          <p>Fresh, shareable portions for quick and convenient serving.</p>
         </div>
       </div>
-       <div class="gallery-item" onclick="openModal('Pork.png', 'Paluto | Food Tray', 'Freshly cooked Filipino favorites — from customized Paluto dishes to hearty food trays, perfect for sharing and celebrations.')">
-        <img src="Pork.png" alt="Paluto | Food Tray">
-        <div class="gallery-description">
-          <h3>Paluto & Food Tray</h3>
-          <p>Cooked fresh, served big — Filipino feasts your way.</p>
-        </div>
-      </div>
-       <div class="gallery-item" onclick="openModal('Vegetables.png', 'Paluto | Food Tray', 'Freshly cooked Filipino favorites — from customized Paluto dishes to hearty food trays, perfect for sharing and celebrations.')">
-        <img src="Vegetables.png" alt="Paluto | Food Tray">
-        <div class="gallery-description">
-          <h3>Paluto & Food Tray</h3>
-          <p>Cooked fresh, served big — Filipino feasts your way.</p>
-        </div>
-      </div>
-     <div class="gallery-item" onclick="openModal('Bento.png', 'Bento Meals', 'Freshly packed Filipino meals in convenient bento boxes — balanced, flavorful, and perfect for any occasion.')">
-        <img src="Bento.png" alt="Bento Meals">
+      <div class="gallery-item" onclick="openModal('Bento.jpg', 'Bento Meals', 'Balanced, satisfying meals designed for workdays, events, and gatherings.')">
+        <img src="Bento.jpg" alt="Bento meals">
         <div class="gallery-description">
           <h3>Bento Meals</h3>
-          <p>Filipino goodness, boxed fresh.</p>
+          <p>Balanced, satisfying meals designed for workdays, events, and gatherings.</p>
         </div>
-      </div>
       </div>
     </div>
   </section>
+
   <section id="Bilao" class="section">
     <h2>Bilao Packages Rate</h2>
-    <p>Click any image to view full details</p>
+    <p>Festive Filipino favorites arranged beautifully for every celebration and sharing table.</p>
     <div class="gallery">
-      <div class="gallery-item" onclick="openModal('Bilao1.png', 'Bilao Packages - Noodles & Pasta', 'Generous Filipino noodle and pasta trays — freshly cooked, party‑ready, and perfect for sharing.')">
-        <img src="Bilao1.png" alt="Bilao Packages">
+      <div class="gallery-item" onclick="openModal('Bilao.png', 'Bilao Package', 'A festive Filipino feast of smoky grills, fresh seafood, and classic noodles for sharing.')">
+        <img src="Bilao.png" alt="Bilao package image">
         <div class="gallery-description">
           <h3>Bilao Package</h3>
-          <p>Big flavors, big gatherings.</p>
+          <p>A festive Filipino feast for group celebrations and intimate gatherings.</p>
         </div>
-      </div>
-       <div class="gallery-item" onclick="openModal('Bilao2.png', 'Bilao Packages - Grilled Meats & Seafoods', 'Smoky grilled meats and fresh seafood platters — served with veggies and condiments, perfect for big gatherings.')">
-        <img src="Bilao2.png" alt="Bilao Packages">
-        <div class="gallery-description">
-          <h3>Bilao Package</h3>
-          <p>Grilled to share, feasts to remember.</p>
-        </div>
-      </div>
       </div>
     </div>
   </section>
-  <!-- Modal -->
-  <div id="imageModal" class="modal" onclick="closeModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <button class="close-btn" onclick="closeModal()">&times;</button>
-      <img id="modalImage" class="modal-image" src="" alt="">
-      <h2 id="modalTitle" class="modal-title"></h2>
-      <p id="modalDescription" class="modal-description"></p>
-    </div>
-  </div>
 
   <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>📍 BLK 5 LOT 12 Bella Subdivision Brgy Sala, Cabuyao, Philippines, 4025</p>
-    <p>📞 <a href="tel:09178710632">0917-871-0632</a></p>
-    <p>✉️ santiagoreniccajoy@gmail.com</p>
-    <p>Follow us on Facebook: <a href="https://www.facebook.com/ZercaSauce" target="_blank">Zerca's SIMPLSYA Grill & Restaurant</a></p>
+    <h2>Contact</h2>
+    <div class="contact-layout">
+      <div class="contact-graphic">
+        <img src="Footer.png" alt="Zerca's SIMPLSYA Footer Graphic">
+      </div>
+
+      <div class="contact-details">
+        <p><strong>Address:</strong> Cabuyao, Laguna, Philippines</p>
+        <p><strong>Phone:</strong> <a href="tel:+639123456789">+63 912 345 6789</a></p>
+        <p><strong>Email:</strong> <a href="mailto:hello@zercasimplsya.com">hello@zercasimplsya.com</a></p>
+        <p><strong>Instagram:</strong> <a href="#">@zercasimplsya</a></p>
+        <p><strong>Facebook:</strong> <a href="#">Zerca's SIMPLSYA Grill & Restaurant</a></p>
+        <p><strong>Hours:</strong> Mon-Sun • 10:00 AM - 9:00 PM</p>
+      </div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2026 Zerca's SIMPLSYA Grill & Restaurant | Rustic Dining with Elegance</p>
+    © 2025 Zerca's SIMPLSYA Grill & Restaurant — Fresh flavors, warm hospitality, and rustic charm.
   </footer>
+
+  <div class="modal" id="imageModal" aria-modal="true" role="dialog">
+    <div class="modal-content">
+      <button class="close-btn" onclick="closeModal()" aria-label="Close">&times;</button>
+      <img class="modal-image" id="modalImage" src="" alt="Expanded gallery item">
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-description" id="modalDescription"></p>
+    </div>
+  </div>
 
   <script>
     function openModal(imageSrc, title, description) {
@@ -1275,28 +944,24 @@
       const modalImage = document.getElementById('modalImage');
       const modalTitle = document.getElementById('modalTitle');
       const modalDescription = document.getElementById('modalDescription');
-      
+
       modalImage.src = imageSrc;
       modalTitle.textContent = title;
       modalDescription.textContent = description;
-      
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
     }
-    
-    function closeModal(event) {
-      const modal = document.getElementById('imageModal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
+
+    function closeModal() {
+      document.getElementById('imageModal').classList.remove('active');
     }
-    
-    // Close modal when pressing Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeModal();
-      }
+
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') closeModal();
+    });
+
+    document.getElementById('imageModal').addEventListener('click', function (event) {
+      if (event.target === this) closeModal();
     });
   </script>
-
 </body>
 </html>
